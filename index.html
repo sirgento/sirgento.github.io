@@ -41,8 +41,7 @@
 	<script type="text/javascript">
     	$(document).ready(function() {
     		$(".w3-bar-item").click(function() {
-    			let redirect_url = "./pages/" + $(this)[0].id + ".html";
-    			$("#content-frame")[0].src = redirect_url;
+    			redirect_iframe($(this)[0].id);
     		});
     	});
     </script>
