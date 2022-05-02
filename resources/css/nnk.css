@@ -1,3 +1,11 @@
+:root {
+	--vpw-litegrey: #B6B6D8;
+	--vpw-blue: #1919D7;
+	--vpw-purple: #7905D1;
+	--vpw-pink: #D2289C;
+	--vpw-dark: #290C20;
+}
+
 .sempad {
 	padding:none!important;
 }
