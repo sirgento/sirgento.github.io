@@ -4,18 +4,37 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="./resources/css/w3-nnk.css">
+<!--	<link rel="stylesheet" href="./resources/css/w3-nnk.css">	-->
+	<link rel="stylesheet" href="./resources/css/nnk.css">
 	<script src="./resources/javascript/myfile.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>SirGento - Web Developer</title>
 	<style type="text/css">
 		body {
 			font-family: monospace !important;
+			background-color: var(--vpw-dark);
 		}
-		iframe {
+		span {
+			color: var(--vpw-litegrey);
+		}
+		a {
+			color: var(--vpw-pink);
+		}
+		a:hover {
+			color: var(--vpw-blue) !important;
+			text-shadow: 0 0 4px black;
+		}
+		#content-div {
 			width: 100%;
 			height: 70vh;
 			border: 0;
+			background-color: var(--vpw-purple);
+		}
+		#content-div a {
+			color: var(--vpw-litegrey);
+		}
+		#content-div a:hover {
+			text-shadow: 0 0 4px white;
 		}
 		.w3-bar-item:hover {
 			cursor:pointer;
@@ -31,7 +50,7 @@
 	<div class="w3-container">
 		<span class="w3-xxlarge">Sir Gento - Web Developer</span>
 		<div class="w3-card w3-nnk-blue-l3">
-			<iframe id="content-frame" class="w3-container" src="./pages/start.html"></iframe>
+			<div class="w3-panel" id="content-div"></div>
 		</div>
 	</div>
 	<div class="w3-small w3-center">
@@ -43,8 +62,9 @@
 	</div>
 	<script type="text/javascript">
     	$(document).ready(function() {
+		updateContentDiv("start");
     		$(".w3-bar-item").click(function() {
-    			redirect_iframe($(this)[0].id);
+    			updateContentDiv($(this)[0].id);
     		});
     	});
     </script>
