@@ -1,8 +1,8 @@
 :root {
 	--vpw-litegrey: #B6B6D8;
-	--vpw-blue: #1919D7;
-	--vpw-purple: #7905D1;
-	--vpw-pink: #D2289C;
+	--vpw-blue: #00007f;
+	--vpw-purple: #7f00ff;
+	--vpw-pink: #ff007f;
 	--vpw-dark: #290C20;
 }
 
@@ -13,4 +13,33 @@
 .botaoCircular {
 	border-radius:50%!important;
 	border: 0px!important;
+}
+.synthwave-bg {
+	background-image: url("../images/wallhaven-z8x55o_3840x2160.png");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.glass {
+	/* From https://css.glass */
+	background: rgba(240, 248, 255, 0.15);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+}
+.neonText {
+	font-family: 'Megrim', cursive;
+	/* From https://css-tricks.com/how-to-create-neon-text-with-css/ */
+	color: #fff;
+	text-shadow:
+		0 0 7px #fff,
+		0 0 10px #fff,
+		0 0 21px #fff,
+		0 0 42px var(--vpw-pink),
+		0 0 82px var(--vpw-pink),
+		0 0 92px var(--vpw-pink),
+		0 0 102px var(--vpw-pink),
+		0 0 151px var(--vpw-pink);
 }
