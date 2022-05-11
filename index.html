@@ -5,15 +5,17 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet"> 
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="./resources/css/nnk.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" /> 
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	<link rel="stylesheet" href="./resources/css/nnk.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="manifest" href="/site.webmanifest" />
 	<script src="./resources/javascript/myfile.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/jquery.overlayScrollbars.min.js"></script>
 	<title>SirGento - Web Developer</title>
 	<style type="text/css">
 		a {
@@ -52,7 +54,7 @@
 	<div class="w3-panel w3-center">
 		<span class="w3-xxlarge neonText">Sir Gento - Web Developer</span>
 	</div>
-	<div class="w3-card w3-margin w3-container glass">
+	<div id="content-container" class="w3-card w3-margin w3-container glass">
 		<div id="content-div" class="litegreytext"></div>
 	</div>
 	<div id="footer" class="litegreytext">
@@ -68,6 +70,8 @@
 	<script type="text/javascript">
     	$(document).ready(function() {
 		updateContentDiv("start");
+		setMaxContentHeight();
+		$('#content-container').overlayScrollbars({ });
     		$(".w3-bar-item").click(function() {
     			updateContentDiv($(this)[0].id);
     		});
