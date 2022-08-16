@@ -16,7 +16,7 @@
 	<script src="/resources/javascript/myfile.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/jquery.overlayScrollbars.min.js"></script>
-	<title>SirGento - Web Developer</title>
+	<title>Cardápio Digital</title>
 	<style type="text/css">
 		a {
 			color: var(--vpw-pink);
@@ -33,10 +33,6 @@
 				0 0 102px var(--vpw-blue),
 				0 0 151px var(--vpw-blue);
 		}
-		.litegreytext {
-			color: var(--vpw-litegrey);
-			text-shadow: 1px 1px 2px var(--vpw-dark);
-		}
 		#footer {
 			position: absolute; 
 			bottom: 0; 
@@ -45,37 +41,38 @@
 		}
 	</style>
 </head>
-<body class="synthwave-bg">
+<body>
 	<div class="w3-bar w3-black">
-		<div class="w3-bar-item w3-hover-grey" id="start">Start</div>
-		<div class="w3-bar-item w3-hover-grey" id="about">About</div>
-		<div class="w3-bar-item w3-hover-grey" id="portfolio">Portfolio</div>
-	</div>
-	<div class="w3-panel w3-center">
-		<span class="w3-xxlarge neonText">Sir Gento - Web Developer</span>
+		<div class="w3-bar-item w3-hover-grey" id="food">Lanches</div>
+		<div class="w3-bar-item w3-hover-grey" id="drink">Bebidas</div>
 	</div>
 	<div id="content-container" class="w3-card w3-margin w3-container glass">
-		<div id="content-div" class="litegreytext"></div>
+		<div id="content-div"></div>
 	</div>
-	<div id="footer" class="litegreytext">
+	<div id="footer">
 		<div class="w3-small w3-center">
 			<span>This work is licensed under a <a rel="license"
 				href="http://creativecommons.org/licenses/by/4.0/">Creative
 					Commons Attribution 4.0 International License</a></span><br />
-			<span>Background image sourced from <a rel="license"
-				href="https://wallhaven.cc/w/z8x55o">Wallhaven</a></span><br />
 			<a href="https://www.w3schools.com/w3css/default.asp"> Powered by w3.css </a>
 		</div>
 	</div>
 	<script type="text/javascript">
     	$(document).ready(function() {
-		updateContentDiv("start");
-		setMaxContentHeight();
-		$('#content-container').overlayScrollbars({ });
-    		$(".w3-bar-item").click(function() {
-    			updateContentDiv($(this)[0].id);
-    		});
+			setMaxContentHeight();
+			$('#content-container').overlayScrollbars({ });
+			$(".w3-bar-item").click(function() {
+				let idBotao = $(this)[0].id;
+				updateContentDiv(idBotao);
+				setTimeout(function() { adicionarConteudoCardapio(idBotao); }, 20);
+			});
+			updateContentDiv("food");
+			setTimeout(function() { adicionarConteudoCardapio("food"); }, 20);
     	});
+		async function adicionarConteudoCardapio(p0) {
+			let cardapio = await fetch_json_cardapio("resources/" + p0 + ".json");
+			jogar_cardapio_tela($("#componenteCardapio")[0], cardapio);
+		}
     </script>
 </body>
 </html>

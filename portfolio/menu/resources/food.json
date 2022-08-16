@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Cheeseburger",
+        "desc": "100g de carne moída, pão brioche e queijo cheddar.",
+        "price": 15.00
+    },
+    {
+        "name": "Dogão",
+        "desc": "Pão de cachorro-quente com duas salsichas e molho de alho caseiro",
+        "price": 12.00
+    }
+]

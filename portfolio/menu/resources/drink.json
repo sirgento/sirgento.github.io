@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Água mineral",
+        "desc": "Com ou sem gás",
+        "price": 5.00
+    },
+    {
+        "name": "Suco natural",
+        "desc": "Laranja, limão ou melancia",
+        "price": 8.00
+    }
+]
