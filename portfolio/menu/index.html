@@ -39,6 +39,28 @@
 			margin-bottom: 1em; 
 			width: 100%;
 		}
+		@media screen and (max-width: 800px) {
+			.item-cardapio {
+				width: calc(100% - 2em)!important;
+			}
+		}
+		.item-cardapio {
+			width: calc(50% - 2em);
+			box-shadow: 1px 1px 1px 1px black;
+			border-radius: 0.5em;
+			padding: 1em;
+			margin: 1em;
+			display: inline-grid;
+		}
+		.item-cardapio div {
+			width: 100%;
+		}
+		.titulo-cardapio {
+			float: left;
+		}
+		.preco-cardapio {
+			float: right;
+		}
 	</style>
 </head>
 <body>

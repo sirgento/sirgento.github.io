@@ -31,9 +31,10 @@ async function fetch_json_cardapio(resourcepath) {
 }
 
 function jogar_cardapio_tela(componente, cardapio) {
+	let count = 0;
 	for (x of cardapio) {
 		let prev_data = componente.innerHTML;
-		let new_data = `<div><div><span>${x.name}</span><span>${x.price}</span></div><div><span>${x.desc}</span></div></div>`;
+		let new_data = `<div class="item-cardapio"><div><span class="titulo-cardapio">${x.name}</span><span class="preco-cardapio">${x.price}</span></div><div><span>${x.desc}</span></div></div>`;
 		componente.innerHTML = prev_data + new_data;
 	}
 }
