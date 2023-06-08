@@ -7,20 +7,21 @@
 }
 
 .sempad {
-	padding:none!important;
+	padding: none !important;
 }
 
 .botaoCircular {
-	border-radius:50%!important;
-	border: 0px!important;
+	border-radius: 50% !important;
+	border: 0px !important;
 }
+
 .synthwave-bg {
-	background-image: url("../images/wallhaven-z8x55o_3840x2160.png");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 .glass {
 	/* From https://css.glass */
 	background: rgba(240, 248, 255, 0.15);
@@ -29,6 +30,9 @@
 	backdrop-filter: blur(4px);
 	-webkit-backdrop-filter: blur(4px);
 }
+
+
+#content-div h3,
 .neonText {
 	font-family: 'Megrim', cursive;
 	/* From https://css-tricks.com/how-to-create-neon-text-with-css/ */
@@ -42,4 +46,29 @@
 		0 0 92px var(--vpw-pink),
 		0 0 102px var(--vpw-pink),
 		0 0 151px var(--vpw-pink);
+}
+
+/* added responsiveness */
+@media screen and (min-width: 1921px) {
+	.synthwave-bg {
+		background-image: url("../images/wallhaven-z8x55o_3840x2160.png");
+	}
+}
+
+@media screen and (max-width: 1920px) {
+	.synthwave-bg {
+		background-image: url("../images/wallhaven-z8x55o_1920x1080.png");
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.synthwave-bg {
+		background-image: url("../images/wallhaven-z8x55o_800x1080.png");
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.synthwave-bg {
+		background-image: url("../images/wallhaven-z8x55o_400x540.png");
+	}
 }

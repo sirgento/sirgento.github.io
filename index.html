@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" /> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" />
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 	<link rel="stylesheet" href="./resources/css/nnk.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 	<link rel="manifest" href="/site.webmanifest" />
 	<script src="./resources/javascript/myfile.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/jquery.overlayScrollbars.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.js"
+		integrity="sha512-lK6oZEScytehJvHjR7R03NENoR6dMjpv7PkyQacFi8rux5YxIaYu7tsOCGbZ/RRH8GFnR82LOAp267kxD+q+qQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+		integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/jquery.overlayScrollbars.min.js"></script>
 	<title>SirGento - Web Developer</title>
 	<style type="text/css">
 		a {
 			color: var(--vpw-pink);
 		}
+
 		a:hover {
 			color: var(--vpw-purple);
 			text-shadow:
@@ -33,24 +42,27 @@
 				0 0 102px var(--vpw-blue),
 				0 0 151px var(--vpw-blue);
 		}
+
 		.litegreytext {
 			color: var(--vpw-litegrey);
 			text-shadow: 1px 1px 2px var(--vpw-dark);
 		}
+
 		#footer {
-			position: absolute; 
-			bottom: 0; 
-			margin-bottom: 1em; 
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 1em;
 			width: 100%;
 		}
 	</style>
 </head>
+
 <body class="synthwave-bg">
-	<div class="w3-bar w3-black">
-		<div class="w3-bar-item w3-hover-grey" id="start">Start</div>
-		<div class="w3-bar-item w3-hover-grey" id="about">About</div>
-		<div class="w3-bar-item w3-hover-grey" id="portfolio">Portfolio</div>
-	</div>
+	<nav class="w3-bar w3-black">
+		<a href="#" class="w3-bar-item w3-hover-grey" id="start">Start</a>
+		<a href="#" class="w3-bar-item w3-hover-grey" id="about">About</a>
+		<a href="#" class="w3-bar-item w3-hover-grey" id="portfolio">Portfolio</a>
+	</nav>
 	<div class="w3-panel w3-center">
 		<span class="w3-xxlarge neonText">Sir Gento - Web Developer</span>
 	</div>
@@ -60,22 +72,26 @@
 	<div id="footer" class="litegreytext">
 		<div class="w3-small w3-center">
 			<span>This work is licensed under a <a rel="license"
-				href="http://creativecommons.org/licenses/by/4.0/">Creative
+					href="http://creativecommons.org/licenses/by/4.0/">Creative
 					Commons Attribution 4.0 International License</a></span><br />
 			<span>Background image sourced from <a rel="license"
-				href="https://wallhaven.cc/w/z8x55o">Wallhaven</a></span><br />
+					href="https://wallhaven.cc/w/z8x55o">Wallhaven</a></span><br />
 			<a href="https://www.w3schools.com/w3css/default.asp"> Powered by w3.css </a>
 		</div>
 	</div>
 	<script type="text/javascript">
-    	$(document).ready(function() {
-		updateContentDiv("start");
-		setMaxContentHeight();
-		$('#content-container').overlayScrollbars({ });
-    		$(".w3-bar-item").click(function() {
-    			updateContentDiv($(this)[0].id);
-    		});
-    	});
-    </script>
+
+		var converter = new showdown.Converter();
+
+		$(document).ready(function () {
+			updateContentDivMarkdown("start", converter);
+			setMaxContentHeight();
+			$('#content-container').overlayScrollbars({});
+			$(".w3-bar-item").click(function () {
+				updateContentDivMarkdown($(this)[0].id, converter);
+			});
+		});
+	</script>
 </body>
+
 </html>
