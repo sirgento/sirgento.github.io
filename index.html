@@ -24,7 +24,8 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/jquery.overlayScrollbars.min.js"></script>
-	<title>SirGento - Web Developer</title>
+	<script src="https://cdn.jsdelivr.net/gh/sirgento/yamfw.js/devel.js"></script>
+	<title>SirGento - Programmer</title>
 	<style type="text/css">
 		a {
 			color: var(--vpw-pink);
@@ -64,7 +65,7 @@
 		<a href="#" class="w3-bar-item w3-hover-grey" id="portfolio">Portfolio</a>
 	</nav>
 	<div class="w3-panel w3-center">
-		<span class="w3-xxlarge neonText">Sir Gento - Web Developer</span>
+		<span class="w3-xxlarge neonText">Sir Gento - Programmer</span>
 	</div>
 	<div id="content-container" class="w3-card w3-margin w3-container glass">
 		<div id="content-div" class="litegreytext"></div>
@@ -81,15 +82,13 @@
 	</div>
 	<script type="text/javascript">
 
-		var converter = new showdown.Converter();
-
-		$(document).ready(function () {
-			updateContentDivMarkdown("start", converter);
+		const converter = new showdown.Converter();
+		const yamf = new Yamfw("content-div", "w3-bar-item", "pages/md/", null, converter);
+		yamf.initialize();
+		$(document).ready(() => {
 			setMaxContentHeight();
 			$('#content-container').overlayScrollbars({});
-			$(".w3-bar-item").click(function () {
-				updateContentDivMarkdown($(this)[0].id, converter);
-			});
+			$('#start')[0].click();
 		});
 	</script>
 </body>
